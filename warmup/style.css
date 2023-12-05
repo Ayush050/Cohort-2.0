@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 2px 1px 2px #eee;
+}
+
+.zerodha {
+    padding-left: 185px;
+}
+
+.zerodha img {
+    height: 17px;
+    margin: 25px;
+}
+
+.linkcont {
+    padding-right: 225px;
+    display: flex;
+    align-items: center;
+}
+
+li {
+    list-style-type: none;
+    padding-right: 40px;
+}
+
+.navlink {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+li a {
+    color: gray;
+    font-size: 15px;
+}
+
+.zerodha-img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.zerodha-img {
+    height: 345px;
+    margin-top: 100px;
+}
+
+.main-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.main-h1 {
+    font-size: 2.75rem;
+    color: #424242;
+    font-weight: 400;
+}
+
+.main-h3 {
+    margin-top: 1.25rem;
+    color: #424242;
+    font-weight: 400;
+}
+
+.signup-btn {
+    margin-top: 45px;
+    background-color: #387ED1;
+    color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    padding: 10px 30px;
+    font-size: 1.2em;
+}
