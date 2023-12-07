@@ -17,7 +17,7 @@
 */
 
 class Calculator {
-    Calculator(){
+    constructor(){
       this.result=0;
     } 
 
@@ -39,6 +39,9 @@ class Calculator {
       getResult(){
        return this.result;
       } 
+      calculate(){
+
+      }
     
 
 }
