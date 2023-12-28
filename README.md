@@ -5,4 +5,15 @@
 - Loop, Callback functions
 - Promises, async functions
 ## Week2
+- Express JS, Node JS
+- Bash Commands
+- Map and filter
+- Git and Github
+## Week3
+- Middleware
+- Zod
+- Fetch
+- Authentication
+- Databases(Mongo DB)
+## Week4
 
