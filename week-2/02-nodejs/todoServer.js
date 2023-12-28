@@ -39,11 +39,75 @@
 
   Testing the server - run `npm run test-todoServer` command in terminal
  */
-  const express = require('express');
-  const bodyParser = require('body-parser');
-  
-  const app = express();
-  
-  app.use(bodyParser.json());
-  
-  module.exports = app;
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+app.use(express.json());
+app.use(bodyParser.json());
+const todolist = [];
+
+app.get('/todos', (req, resp) => {
+  const todos = todolist.map((todo) => {
+    return { title: todo.title, description: todo.description };
+  })
+  resp.status(200).json(todos);
+
+})
+
+app.get('/todos/:id', (req, resp) => {
+  let todoFound = false;
+  todolist.forEach((todo) => {
+    if (todo.id === req.params.id) {
+      todoFound = true;
+      resp.status(200).json({ todo });
+    }
+  })
+  if (!todoFound) {
+    resp.status(404).json({ error: '404 Not Found' });
+  }
+})
+
+app.post('/todos', (req, resp) => {
+  const todo = req.body;
+  const uniqueId = Math.random().toString(36).substring(2, 9);
+  const newtodo = {
+    id: uniqueId,
+    title: todo.title,
+    description: todo.description
+  }
+  // console.log(newtodo);
+  todolist.push(newtodo);
+  resp.status(201).json({ newtodo });
+  // resp.send(newtodo)
+})
+
+app.put('/todos/:id', (req, resp) => {
+  let todoFound = false;
+  const id = req.params.id;
+  todolist.forEach((item) => {
+    if (id === item.id) {
+      todoFound = true;
+      item.description = req.body.description;
+      resp.status(200).json({ item });
+    }
+  })
+  if (!todoFound) {
+    resp.status(404).json('404 Not Found');
+  }
+})
+app.delete('/todos/:id', (req, resp) => {
+  const todoId = req.params.id;
+  const todoIndex = todolist.findIndex(todo => todo.id === todoId);
+
+  if (todoIndex === -1) {
+    resp.status(404).json({ error: 'Todo not found' });
+  } else {
+    todolist.splice(todoIndex, 1);
+    resp.status(200).json({ message: 'Todo deleted successfully' });
+  }
+})
+
+app.listen(3001);
+
+module.exports = app;
