@@ -11,6 +11,7 @@
 - Git and Github
 ## Week3
 - Middleware
+- global catches
 - Zod
 - Fetch
 - Authentication
