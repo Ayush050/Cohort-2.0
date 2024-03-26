@@ -22,4 +22,6 @@
 - Debouncing and throttling
 - React foundation (basic boiler code)
 ## Week5
+- React
+- Todo Project
 
