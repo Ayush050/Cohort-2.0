@@ -18,4 +18,8 @@
 - Databases(Mongo DB)
 ## Week4
 -DOM
+-Connecting frontend with backend
+-Debouncing and throttling
+-React foundation (basic boiler code)
+## Week5
 
